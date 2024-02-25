@@ -1,0 +1,7 @@
+CREATE TABLE user
+(
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(150) NOT NULL UNIQUE,
+    password_hash VARCHAR(150) NOT NULL,
+    auth_token VARCHAR(150) UNIQUE
+);
