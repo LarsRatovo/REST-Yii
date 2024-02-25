@@ -50,11 +50,14 @@ class User extends \yii\db\ActiveRecord
         ];
     }
     
+    //Scenario pour pouvoir récupérer les données et les valider
     public function scenarios(){
         $scenarios = parent::scenarios();
         $scenarios[self::SCENARIO_ACTION] = ['username','password_hash'];
         return $scenarios;
     }
+
+    //Fonction login pour récupérer l'utilisateur avec l'username et password_hash
     public static function login($user){
         return static::findOne(['username'=>$user->username,'password_hash'=>md5($user->password_hash)]);
     }

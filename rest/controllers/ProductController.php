@@ -46,6 +46,7 @@ class ProductController extends \yii\rest\Controller
         return $saved;
     }
 
+    //Fonction pour vérifier si la référence est déjà dans le tableau
     private function indexOf($product,$array){
         for ($i=0; $i < count($array); $i++) { 
             if($product['reference'] == $array[$i]['reference']){
